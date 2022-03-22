@@ -1,21 +1,19 @@
 import { Request, Response } from "express";
-import { produto } from "../models/produto";
+import { produtoRepository } from "../repositories/produtoRepository";
 
-const produtos : produto[] = []
-
-
+const produtoRespo = new produtoRepository();
 
 export class produtoController{
-    create(request: Request, response: Response){
-        produtos.push(request.body)
-        response.status(201).json({message: "Produto cadastrado", data: produtos})
 
+      create(request:Request, response: Response) : void{
+        const produtos = produtoRespo.create(request.body);
+
+        response.status(201).json({message : "produto cadastrado"})
     }
 
     list(){}
-    
-    update(){}
-    
-    delete(){}
 
+    update(){}
+
+    delete(){}
 }

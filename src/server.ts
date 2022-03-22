@@ -5,7 +5,7 @@ const app = express();
 app.use(routes);
 
 app.listen(3333, () => {
-    console.log('Lorena servidores ta rodando, taquele pau ')
+    console.log('Servidor rodando')
 
 })
 
