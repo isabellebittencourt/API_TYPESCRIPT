@@ -10,7 +10,7 @@ routes.get("/", (req, res)=>{
 routes.post("/produto/create", new produtoController().create)
 routes.get("/produto/list", new produtoController().list)
 routes.put("/produto/update", new produtoController().update)
-routes.delete("/produto/delete", new produtoController().delete)
+routes.delete("/produto/delete/:nome", new produtoController().delete)
 
 
 export {routes};
